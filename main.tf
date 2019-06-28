@@ -1,24 +1,25 @@
 module "log_bucket" {
-  name_prefix = "${var.account_name}"
+  name_prefix = var.account_name
   source      = "QuiNovas/log-bucket/aws"
-  version     = "2.0.0"
+  version     = "3.0.0"
 }
 
 module "cloudtrail" {
-  account_name  = "${var.account_name}"
-  log_bucket    = "${module.log_bucket.id}"
-  source        = "QuiNovas/cloudtrail/aws"
-  version       = "2.0.0"
+  account_name = var.account_name
+  log_bucket   = module.log_bucket.id
+  source       = "QuiNovas/cloudtrail/aws"
+  version      = "3.0.1"
 }
 
 module "config" {
-  name        = "${var.account_name}"
-  log_bucket  = "${module.log_bucket.id}"
-  source      = "QuiNovas/config/aws"
-  version     = "2.1.0"
+  name       = var.account_name
+  log_bucket = module.log_bucket.id
+  source     = "QuiNovas/config/aws"
+  version    = "3.0.1"
 }
 
 module "password_policy" {
   source  = "QuiNovas/password-policy/aws"
   version = "1.0.16"
 }
+
