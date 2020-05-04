@@ -23,3 +23,6 @@ module "password_policy" {
   version = "1.0.16"
 }
 
+resource "aws_iam_account_alias" "alias" {
+  account_alias = var.account_name
+}
