@@ -8,7 +8,7 @@ module "cloudtrail" {
   account_name = var.account_name
   log_bucket   = module.log_bucket.id
   source       = "QuiNovas/cloudtrail/aws"
-  version      = "3.0.1"
+  version      = "3.0.3"
 }
 
 module "config" {
