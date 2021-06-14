@@ -24,5 +24,6 @@ module "password_policy" {
 }
 
 resource "aws_iam_account_alias" "alias" {
+  count         = var.account_alias ? 1 : 0
   account_alias = var.account_name
 }
