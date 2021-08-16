@@ -8,3 +8,9 @@ variable "account_alias" {
   default     = true
   type        = bool
 }
+
+variable "tags" {
+  description = "(Optional) A mapping of tags to assign to the resources"
+  type        = map(string)
+  default     = {}
+}
