@@ -10,7 +10,7 @@ module "cloudtrail" {
   log_bucket   = module.log_bucket.id
   tags         = var.tags
   source       = "QuiNovas/cloudtrail/aws"
-  version      = "3.0.7"
+  version      = "4.0.0"
 }
 
 module "config" {
