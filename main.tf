@@ -18,7 +18,7 @@ module "config" {
   log_bucket = module.log_bucket.id
   tags       = var.tags
   source     = "QuiNovas/config/aws"
-  version    = "4.0.0"
+  version    = "4.0.1"
 }
 
 module "password_policy" {
