@@ -2,7 +2,7 @@ module "log_bucket" {
   name_prefix = var.account_name
   tags        = var.tags
   source      = "QuiNovas/log-bucket/aws"
-  version     = "4.0.0"
+  version     = "4.0.1"
 }
 
 module "cloudtrail" {
@@ -10,7 +10,7 @@ module "cloudtrail" {
   log_bucket   = module.log_bucket.id
   tags         = var.tags
   source       = "QuiNovas/cloudtrail/aws"
-  version      = "4.0.0"
+  version      = "4.0.2"
 }
 
 module "config" {
@@ -18,7 +18,7 @@ module "config" {
   log_bucket = module.log_bucket.id
   tags       = var.tags
   source     = "QuiNovas/config/aws"
-  version    = "4.0.1"
+  version    = "4.0.2"
 }
 
 module "password_policy" {
